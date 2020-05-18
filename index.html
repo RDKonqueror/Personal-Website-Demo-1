@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="css/cssanimation.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Untitled Project 2</title>
+</head>
+<body>
+
+    <!-- THE MAIN SECTION  -->
+    <section class="main" id="fadesec">
+        <span class="greet cssanimation random leDoorCloseLeft">Hi, I'm My Name</span>
+        <br />
+        <span class="greet cssanimation random leDoorCloseLeft">Welcome to my website</span>
+        <br /><br /><br />    <!-- TO MAKE SOME EXTRA LINE HEIGHT -->
+        <span class="fade"><button id="xplrbtn" class="xplr">Explore</button></span>
+    </section>
+
+    <!-- THE WORKS SECTION  -->
+    <section class="works clear" id="works">
+        <h2>My Works</h2>
+        <div>
+            <table>
+                <tr>
+                    <td><img src="img/work.jpg" width="120px" height="150px" alt="work_demo" /><div class="overlay">Demo 1</div></td>
+                    <td><img src="img/work.jpg" width="120px" height="150px" alt="work_demo" /><div class="overlay">Demo 2</div></td>
+                    <td><img src="img/work.jpg" width="120px" height="150px" alt="work_demo" /><div class="overlay">Demo 3</div></td>
+                </tr>
+                <tr>
+                    <td><img src="img/work.jpg" width="120px" height="150px" alt="work_demo" /><div class="overlay">Demo 4</div></td>
+                    <td><img src="img/work.jpg" width="120px" height="150px" alt="work_demo" /><div class="overlay">Demo 5</div></td>
+                    <td><img src="img/work.jpg" width="120px" height="150px" alt="work_demo" /><div class="overlay">Demo 6</div></td>
+                </tr>
+                <tr class="r3">
+                    <td><img src="img/work.jpg" width="120px" height="150px" alt="work_demo" /><div class="overlay">Demo 7</div></td>
+                    <td><img src="img/work.jpg" width="120px" height="150px" alt="work_demo" /><div class="overlay">Demo 8</div></td>
+                    <td><img src="img/work.jpg" width="120px" height="150px" alt="work_demo" /><div class="overlay">Demo 9</div></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button id="load">Load More</button></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- THE ABOUT SECTION -->
+    <section class="about clear">
+        <h2>About Me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum semper neque eget faucibus ultricies. Curabitur et nibh vitae erat malesuada mattis. Aliquam sollicitudin eleifend porttitor. Aliquam consequat ipsum at facilisis ornare.</p>
+    </section>
+
+    <!-- THE CONNECT SECTION -->
+    <section class="connect">
+        <h2>Connect with Me</h2>
+        <div>
+            <a href="https://facebook.com"><i class="fa fa-facebook-square fa-5x" aria-hidden="true"></i></a>
+            <a href="https://twitter.com"><i class="fa fa-twitter-square fa-5x" aria-hidden="true"></i></a>
+            <a href="https://instagram.com"><i class="fa fa-instagram fa-5x" aria-hidden="true"></i></a>
+            <a href="https://linkedin.com"><i class="fa fa-linkedin-square fa-5x" aria-hidden="true"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <small>Designed by: Rahul Dey<br />&#169; All Rights Reserved 2020</small>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/letteranimation.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+
+    <script>
+
+        // PAGE SCROLL ON CLICK
+        $("#xplrbtn").click(function() {
+            $('html, body').animate({
+                scrollTop: $("#works").offset().top
+            }, 2500);
+        });
+
+        // FIRE ANIMATION ON SCROLL
+        $(window).scroll(function() {
+
+            // GET SCROLL POSITION ON 180px
+            if($(document).scrollTop() > 180) {
+
+                // CHECK ELEMENT HAS '.showmain' CLASS ON SCROLL DOWN
+                if($("#fadesec").hasClass("showmain")) {
+                    $("#fadesec").removeClass("showmain");
+                }
+                $("#fadesec").addClass("hidemain");
+
+            }  else {
+
+                // CHECK ELEMENT HAS '.hidemain' CLASS ON SCROLL UP
+                if($("#fadesec").hasClass("hidemain")) {
+                    $("#fadesec").removeClass("hidemain");
+                    $("#fadesec").addClass("showmain");
+                }
+
+            }
+
+        });
+
+        // SHOW TABLE ROW '.r3' ON CLICK
+        $("#load").click(function() {
+            $(".r3").show();
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+
+body {
+    background: #06060e url('../img/bg.jpg') top right/50% 100% no-repeat fixed;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+}
+a {
+    text-decoration: none;
+}
+h2 {
+    font-family: 'Volkhov', serif;
+    font-size: 60px;
+}
+footer {
+    background-color: #06060e;
+    color: #f1f1f2;
+    text-align: right;
+    padding: 25px 15px;
+}
+
+
+/* FLOAT CLEAR CLASS */
+
+.clear {
+    clear: both;
+}
+.clear:after {
+    clear: both;
+}
+.clear:after, .clear:before {
+    content: "";
+    display: table;
+}
+
+
+/* FADE ANIMATION CLASSES */
+
+.hidemain {
+    overflow: hidden;
+    animation-name: fadeInAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.showmain {
+    overflow: hidden;
+    animation-name: fadeOutAnime;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+}
+
+
+/* STYLES FOR THE MAIN SECTION */
+
+.main {
+    background-color: transparent;
+    height: 80vh;
+    width: 50%;
+    padding-left: 100px;
+    padding-top:  200px;
+}
+.greet {
+    color: #f1f1f2;
+    font-size: 30px;
+    font-family: 'Overlock', cursive;
+}
+.fade {
+    animation-name: fadeOutAnime;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+button.xplr {
+    background-color: #012778;
+    color: #fff;
+    border: 1px solid #012778;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font: 600 16px sans-serif;
+    animation: btnAnime 6s infinite;
+}
+button.xplr:hover {
+    background-color: transparent;
+    color: #012778;
+    animation: btnBdrAnime 6s infinite;
+}
+
+
+/* STYLES FOR THE WORKS SECTION */
+
+.works {
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 100%;
+    padding: 35px 25px;
+    border-top: 8px solid #aaa;
+    border-bottom: 8px solid #aaa;
+    text-align: center;
+}
+.works h2 {
+    float: left;
+    width: 40%;
+    color: #212121;
+}
+.works div {
+    width: 60%;
+    float: right;
+}
+.works table {
+    border-collapse: collapse;
+    width: 70%;
+    margin-top: 100px;
+}
+.works tr.r3 {
+    display: none;
+}
+.works td {
+    padding: 25px 15px;
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    bottom: 34px;
+    left: 34px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #f1f1f2; 
+    min-width: 114px;
+    transition: .5s ease;
+    opacity: 0;
+    color: #fff;
+    font-size: 12px;
+    padding: 8px 0;
+    text-align: center;
+}
+.works td:hover .overlay {
+    opacity: 1;
+}
+.works button {
+    background-color: #b52e2e;
+    color: #f9e8e8;
+    border: 1px solid #b52e2e;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.works button:hover {
+    background-color: #952626;
+}
+
+
+/* STYLES FOR THE ABOUT SECTION */
+
+.about {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top: 8px solid #a0a0a0;
+    border-bottom: 8px solid #a0a0a0;
+    height: 100%;
+    padding: 35px 25px;
+}
+.about h2 {
+    float: right;
+    width: 40%;
+    color: #212121;
+    text-align: center;
+}
+.about p {
+    float: left;
+    width: 50%;
+    padding: 95px 0 150px 90px;
+    font-size: 30px;
+    font-family: 'Overlock', cursive;
+}
+
+
+/* STYLES FOR THE CONNECT SECTION */
+
+.connect {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top: 8px solid #aaa;
+    text-align: center;
+    height: 100%;
+    padding: 35px 25px;
+}
+.connect h2 {
+    color: #212121;
+}
+.connect div {
+    padding: 80px 0 140px 0;
+}
+.connect a {
+    color: #000;
+}
+.connect i {
+    margin: 15px;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes btnAnime {
+    0% {
+        background-color: #ee6514;
+        border: 1px solid #ee6514;
+    }
+    35% {
+        background-color: #012778;
+        border: 1px solid #012778;
+    }
+    65% {
+        background-color: #d50000;
+        border: 1px solid #d50000;
+    }
+    100% {
+        background-color: #ee6514;
+        border: 1px solid #ee6514;
+    }
+}
+
+@keyframes btnBdrAnime {
+    0% {
+        color: #012778;
+        border: 1px solid #012778;
+    }
+    35% {
+        color: #d50000;
+        border: 1px solid #d50000;
+    }
+    65% {
+        color: #ee6514;
+        border: 1px solid #ee6514;
+    }
+    100% {
+        color: #012778;
+        border: 1px solid #012778;
+    }
+}
+
+@keyframes fadeOutAnime {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInAnime {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
